@@ -1,0 +1,36 @@
+name: build
+on: [push, pull_request]
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+    - if: ${{ startsWith(matrix.os, 'ubuntu') }}
+      run: |
+        cd /tmp
+
+        sudo apt-get update && apt-get install libboost-all-dev libeigen3-dev
+
+        wget https://arrayfire.s3.amazonaws.com/3.7.3/ArrayFire-v3.7.3_Linux_x86_64.sh
+        ./ArrayFire-v3.7.3_Linux_x86_64.sh --include-subdir --prefix=/opt
+        echo /opt/arrayfire/lib64 > /etc/ld.so.conf.d/arrayfire.conf
+        sudo ldconfig
+
+        git clone --recursive --branch v0.5.0 https://github.com/shapelets/khiva
+        mkdir build
+        cd build
+        cmake .. -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_TESTS=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_BUILD_JNI_BINDINGS=OFF
+        make -j4
+        make install
+    - if: ${{ startsWith(matrix.os, 'macos') }}
+      run: brew update && brew install khiva
+    - run: bundle exec rake test
