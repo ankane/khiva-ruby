@@ -95,6 +95,16 @@ module Khiva
     extern "void znorm(const khiva_array *tss, const double *epsilon, khiva_array *result, int *error_code, char *error_message)"
     extern "void znorm_in_place(khiva_array *tss, const double *epsilon, int *error_code, char *error_message)"
 
+    # polynomial.h
+    extern "void polyfit(const khiva_array *x, const khiva_array *y, const int *deg, khiva_array *result, int *error_code, char *error_message)"
+    extern "void roots(const khiva_array *p, khiva_array *result, int *error_code, char *error_message)"
+
+    # regression.h
+    extern "void linear(const khiva_array *xss, const khiva_array *yss, khiva_array *slope, khiva_array *intercept, khiva_array *rvalue, khiva_array *pvalue, khiva_array *stderrest, int *error_code, char *error_message)"
+
+    # regularization.h
+    extern "void group_by(const khiva_array *array, const int *aggregation_function, const int *n_columns_key, const int *n_columns_value, khiva_array *result, int *error_code, char *error_message)"
+
     # statistics.h
     extern "void covariance_statistics(const khiva_array *tss, const bool *unbiased, khiva_array *result, int *error_code, char *error_message)"
     extern "void kurtosis_statistics(const khiva_array *tss, khiva_array *result, int *error_code, char *error_message)"
