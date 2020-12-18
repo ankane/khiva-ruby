@@ -265,6 +265,42 @@ First location of the minimum value
 Khiva::Features.first_location_of_minimum(tss)
 ```
 
+Maximum is duplicated
+
+```ruby
+Khiva::Features.has_duplicate_max(tss)
+```
+
+Minimum is duplicated
+
+```ruby
+Khiva::Features.has_duplicate_min(tss)
+```
+
+Any elements are duplicated
+
+```ruby
+Khiva::Features.has_duplicates(tss)
+```
+
+Index of the mass quantile
+
+```ruby
+Khiva::Features.index_mass_quantile(tss, q)
+```
+
+Kurtosis
+
+```ruby
+Khiva::Features.kurtosis(tss)
+```
+
+Standard deviation above threshold
+
+```ruby
+Khiva::Features.large_standard_deviation(tss, r)
+```
+
 Last location of the maximum value
 
 ```ruby

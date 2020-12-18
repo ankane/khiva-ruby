@@ -60,6 +60,30 @@ print()
 
 # ---
 
+print('has_duplicate_max')
+print(has_duplicate_max(a).to_list())
+print()
+
+print('has_duplicate_min')
+print(has_duplicate_min(a).to_list())
+print()
+
+print('has_duplicates')
+print(has_duplicates(a).to_list())
+print()
+
+print('index_mass_quantile')
+print(index_mass_quantile(a, 0.5).to_list())
+print()
+
+print('kurtosis')
+print(kurtosis(a).to_list())
+print()
+
+print('large_standard_deviation')
+print(large_standard_deviation(a, 1).to_list())
+print()
+
 print('last_location_of_maximum')
 print(last_location_of_maximum(a).to_list())
 print()

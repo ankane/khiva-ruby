@@ -67,6 +67,42 @@ module Khiva
         Array.new(result)
       end
 
+      def has_duplicate_max(arr)
+        result = Utils.create_ptr
+        FFI.call(:has_duplicate_max, arr, result)
+        Array.new(result)
+      end
+
+      def has_duplicate_min(arr)
+        result = Utils.create_ptr
+        FFI.call(:has_duplicate_min, arr, result)
+        Array.new(result)
+      end
+
+      def has_duplicates(arr)
+        result = Utils.create_ptr
+        FFI.call(:has_duplicates, arr, result)
+        Array.new(result)
+      end
+
+      def index_mass_quantile(arr, q)
+        result = Utils.create_ptr
+        FFI.call(:index_mass_quantile, arr, Utils.float_ptr(q), result)
+        Array.new(result)
+      end
+
+      def kurtosis(arr)
+        result = Utils.create_ptr
+        FFI.call(:kurtosis, arr, result)
+        Array.new(result)
+      end
+
+      def large_standard_deviation(arr, r)
+        result = Utils.create_ptr
+        FFI.call(:large_standard_deviation, arr, Utils.float_ptr(r), result)
+        Array.new(result)
+      end
+
       def last_location_of_maximum(arr)
         result = Utils.create_ptr
         FFI.call(:last_location_of_maximum, arr, result)

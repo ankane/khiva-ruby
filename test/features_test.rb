@@ -56,6 +56,36 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.first_location_of_minimum(tss)
   end
 
+  def test_has_duplicate_max
+    expected = [false]
+    assert_equal expected, Khiva::Features.has_duplicate_max(tss).to_a
+  end
+
+  def test_has_duplicate_min
+    expected = [false]
+    assert_equal expected, Khiva::Features.has_duplicate_min(tss).to_a
+  end
+
+  def test_has_duplicates
+    expected = [false]
+    assert_equal expected, Khiva::Features.has_duplicates(tss).to_a
+  end
+
+  def test_index_mass_quantile
+    expected = [0.8]
+    assert_elements_in_delta expected, Khiva::Features.index_mass_quantile(tss, 0.5)
+  end
+
+  def test_kurtosis
+    expected = [-1.2]
+    assert_elements_in_delta expected, Khiva::Features.kurtosis(tss)
+  end
+
+  def test_large_standard_deviation
+    expected = [false]
+    assert_equal expected, Khiva::Features.large_standard_deviation(tss, 1).to_a
+  end
+
   def test_last_location_of_maximum
     expected = [1]
     assert_elements_in_delta expected, Khiva::Features.last_location_of_maximum(tss)
