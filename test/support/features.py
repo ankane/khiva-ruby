@@ -144,6 +144,19 @@ print()
 
 # ---
 
+print('quantile')
+q = Array.from_list([0.5], dtype.f64)
+print(quantile(a, q).to_list())
+print()
+
+print('range_count')
+print(range_count(a, 2, 4).to_list())
+print()
+
+print('ratio_beyond_r_sigma')
+print(ratio_beyond_r_sigma(a, 1).to_list())
+print()
+
 print('ratio_value_number_to_time_series_length')
 print(ratio_value_number_to_time_series_length(a).to_list())
 print()
@@ -156,7 +169,9 @@ print('skewness')
 print(skewness(a).to_list())
 print()
 
-# ---
+print('spkt_welch_density')
+print(spkt_welch_density(a, 1).to_list())
+print()
 
 print('standard_deviation')
 print(standard_deviation(a).to_list())

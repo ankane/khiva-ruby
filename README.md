@@ -379,6 +379,24 @@ Minimum
 Khiva::Features.minimum(tss)
 ```
 
+Quantile
+
+```ruby
+Khiva::Features.quantile(tss, q, precision: 100000000)
+```
+
+Count of values within the interval [min, max]
+
+```ruby
+Khiva::Features.range_count(tss, min, max)
+```
+
+Ratio of values more than `r` sigma away from the mean
+
+```ruby
+Khiva::Features.ratio_beyond_r_sigma(tss, coeff)
+```
+
 Ratio of unique values
 
 ```ruby
@@ -395,6 +413,12 @@ Skewness
 
 ```ruby
 Khiva::Features.skewness(tss)
+```
+
+Cross power spectral density at different frequencies
+
+```ruby
+Khiva::Features.spkt_welch_density(tss, coeff)
 ```
 
 Standard deviation

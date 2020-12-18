@@ -181,6 +181,24 @@ module Khiva
         Array.new(result)
       end
 
+      def quantile(arr, q, precision: 100000000)
+        result = Utils.create_ptr
+        FFI.call(:quantile, arr, q, Utils.float_ptr(precision), result)
+        Array.new(result)
+      end
+
+      def range_count(arr, min, max)
+        result = Utils.create_ptr
+        FFI.call(:range_count, arr, Utils.float_ptr(min), Utils.float_ptr(max), result)
+        Array.new(result)
+      end
+
+      def ratio_beyond_r_sigma(arr, r)
+        result = Utils.create_ptr
+        FFI.call(:ratio_beyond_r_sigma, arr, Utils.float_ptr(r), result)
+        Array.new(result)
+      end
+
       def ratio_value_number_to_time_series_length(arr)
         result = Utils.create_ptr
         FFI.call(:ratio_value_number_to_time_series_length, arr, result)
@@ -196,6 +214,12 @@ module Khiva
       def skewness(arr)
         result = Utils.create_ptr
         FFI.call(:skewness, arr, result)
+        Array.new(result)
+      end
+
+      def spkt_welch_density(arr, coeff)
+        result = Utils.create_ptr
+        FFI.call(:spkt_welch_density, arr, Utils.int_ptr(coeff), result)
         Array.new(result)
       end
 

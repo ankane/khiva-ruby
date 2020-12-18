@@ -155,6 +155,24 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.minimum(tss)
   end
 
+  def test_quantile
+    q = Khiva::Array.new([0.5])
+    expected = [3]
+    assert_elements_in_delta expected, Khiva::Features.quantile(tss, q)
+  end
+
+  def test_range_count
+    skip # TODO debug
+
+    expected = [3]
+    assert_elements_in_delta expected, Khiva::Features.range_count(tss, 2, 4)
+  end
+
+  def test_ratio_beyond_r_sigma
+    expected = [0.4]
+    assert_elements_in_delta expected, Khiva::Features.ratio_beyond_r_sigma(tss, 1)
+  end
+
   def test_ratio_value_number_to_time_series_length
     expected = [1]
     assert_elements_in_delta expected, Khiva::Features.ratio_value_number_to_time_series_length(tss)
@@ -168,6 +186,11 @@ class FeaturesTest < Minitest::Test
   def test_skewness
     expected = [0]
     assert_elements_in_delta expected, Khiva::Features.skewness(tss)
+  end
+
+  def test_spkt_welch_density
+    expected = [2.872678279876709]
+    assert_elements_in_delta expected, Khiva::Features.spkt_welch_density(tss, 1)
   end
 
   def test_standard_deviation
@@ -216,6 +239,6 @@ class FeaturesTest < Minitest::Test
   end
 
   def tss
-    Khiva::Array.new([1, 2, 3, 4, 5], type: :f32)
+    Khiva::Array.new([1, 2, 3, 4, 5], type: :f64)
   end
 end
