@@ -13,6 +13,42 @@ module Khiva
         Array.new(result)
       end
 
+      def last_location_of_maximum(arr)
+        result = Utils.create_ptr
+        FFI.call(:last_location_of_maximum, arr, result)
+        Array.new(result)
+      end
+
+      def last_location_of_minimum(arr)
+        result = Utils.create_ptr
+        FFI.call(:last_location_of_minimum, arr, result)
+        Array.new(result)
+      end
+
+      def length(arr)
+        result = Utils.create_ptr
+        FFI.call(:length, arr, result)
+        Array.new(result)
+      end
+
+      def local_maximals(arr)
+        result = Utils.create_ptr
+        FFI.call(:local_maximals, arr, result)
+        Array.new(result)
+      end
+
+      def longest_strike_above_mean(arr)
+        result = Utils.create_ptr
+        FFI.call(:longest_strike_above_mean, arr, result)
+        Array.new(result)
+      end
+
+      def longest_strike_below_mean(arr)
+        result = Utils.create_ptr
+        FFI.call(:longest_strike_below_mean, arr, result)
+        Array.new(result)
+      end
+
       def maximum(arr)
         result = Utils.create_ptr
         FFI.call(:maximum, arr, result)

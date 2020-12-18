@@ -159,6 +159,42 @@ Absolute sum of changes
 Khiva::Features.absolute_sum_of_changes(tss)
 ```
 
+Last location of the maximum value
+
+```ruby
+Khiva::Features.last_location_of_maximum(tss)
+```
+
+Last location of the minimum value
+
+```ruby
+Khiva::Features.last_location_of_minimum(tss)
+```
+
+Length of the series
+
+```ruby
+Khiva::Features.length(tss)
+```
+
+Local maximals
+
+```ruby
+Khiva::Features.local_maximals(tss)
+```
+
+Length of the longest consecutive subsequence above the mean
+
+```ruby
+Khiva::Features.longest_strike_above_mean(tss)
+```
+
+Length of the longest consecutive subsequence below the mean
+
+```ruby
+Khiva::Features.longest_strike_below_mean(tss)
+```
+
 Maximum
 
 ```ruby

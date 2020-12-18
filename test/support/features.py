@@ -16,6 +16,36 @@ print()
 
 # ---
 
+print('last_location_of_maximum')
+print(last_location_of_maximum(a).to_list())
+print()
+
+print('last_location_of_minimum')
+print(last_location_of_minimum(a).to_list())
+print()
+
+print('length')
+print(length(a).to_list())
+print()
+
+print('linear_trend')
+print(linear_trend(a))
+print()
+
+print('local_maximals')
+print(local_maximals(a).to_list())
+print()
+
+print('longest_strike_above_mean')
+print(longest_strike_above_mean(a).to_list())
+print()
+
+print('longest_strike_below_mean')
+print(longest_strike_below_mean(a).to_list())
+print()
+
+# ---
+
 print('maximum')
 print(maximum(a).to_list())
 print()

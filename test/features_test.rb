@@ -11,6 +11,40 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.absolute_sum_of_changes(tss)
   end
 
+  def test_last_location_of_maximum
+    expected = [1]
+    assert_elements_in_delta expected, Khiva::Features.last_location_of_maximum(tss)
+  end
+
+  def test_last_location_of_minimum
+    expected = [0.2]
+    assert_elements_in_delta expected, Khiva::Features.last_location_of_minimum(tss)
+  end
+
+  def test_length
+    expected = [5]
+    assert_elements_in_delta expected, Khiva::Features.length(tss)
+  end
+
+  # TODO
+  def test_linear_trend
+  end
+
+  def test_local_maximals
+    expected = [1.0, 0.0, 0.0, 0.0, 1.0]
+    assert_elements_in_delta expected, Khiva::Features.local_maximals(tss)
+  end
+
+  def test_longest_strike_above_mean
+    expected = [2]
+    assert_elements_in_delta expected, Khiva::Features.longest_strike_above_mean(tss)
+end
+
+  def test_longest_strike_below_mean
+    expected = [2]
+    assert_elements_in_delta expected, Khiva::Features.longest_strike_below_mean(tss)
+  end
+
   def test_maximum
     expected = [5]
     assert_elements_in_delta expected, Khiva::Features.maximum(tss)
