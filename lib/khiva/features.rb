@@ -55,6 +55,24 @@ module Khiva
         Array.new(result)
       end
 
+      def skewness(arr)
+        result = Utils.create_ptr
+        FFI.call(:skewness, arr, result)
+        Array.new(result)
+      end
+
+      def standard_deviation(arr)
+        result = Utils.create_ptr
+        FFI.call(:standard_deviation, arr, result)
+        Array.new(result)
+      end
+
+      def sum_values(arr)
+        result = Utils.create_ptr
+        FFI.call(:sum_values, arr, result)
+        Array.new(result)
+      end
+
       def value_count(arr, v)
         result = Utils.create_ptr
         FFI.call(:value_count, arr, Utils.float_ptr(v), result)

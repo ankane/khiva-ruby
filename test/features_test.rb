@@ -46,6 +46,21 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.minimum(tss)
   end
 
+  def test_skewness
+    expected = [0]
+    assert_elements_in_delta expected, Khiva::Features.skewness(tss)
+  end
+
+  def test_standard_deviation
+    expected = [1.4142135623730951]
+    assert_elements_in_delta expected, Khiva::Features.standard_deviation(tss)
+  end
+
+  def test_sum_values
+    expected = [15]
+    assert_elements_in_delta expected, Khiva::Features.sum_values(tss)
+  end
+
   def test_value_count
     expected = [1]
     assert_elements_in_delta expected, Khiva::Features.value_count(tss, 3)

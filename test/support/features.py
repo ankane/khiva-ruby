@@ -46,6 +46,24 @@ print()
 
 # ---
 
+print('skewness')
+print(skewness(a).to_list())
+print()
+
+# ---
+
+print('standard_deviation')
+print(standard_deviation(a).to_list())
+print()
+
+# ---
+
+print('sum_values')
+print(sum_values(a).to_list())
+print()
+
+# ---
+
 print('value_count')
 print(value_count(a, 3).to_list())
 print()

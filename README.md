@@ -201,6 +201,24 @@ Minimum
 Khiva::Features.minimum(tss)
 ```
 
+Skewness
+
+```ruby
+Khiva::Features.skewness(tss)
+```
+
+Standard deviation
+
+```ruby
+Khiva::Features.standard_deviation(tss)
+```
+
+Sum of values
+
+```ruby
+Khiva::Features.sum_values(tss)
+```
+
 Occurrences of a value
 
 ```ruby
