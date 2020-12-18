@@ -42,7 +42,23 @@ Find motifs
 motif_distances, motif_indices, subsequence_indices = Khiva::Matrix.find_best_n_motifs(profile, index, 2, 2)
 ```
 
-## Arrays
+## Modules
+
+- [Array](#array)
+- [Clustering](#clustering)
+- [Dimensionality](#dimensionality)
+- [Distances](#distances)
+- [Features](#features)
+- [Library](#library)
+- [Linalg](#linalg)
+- [Matrix](#matrix)
+- [Normalization](#normalization)
+- [Polynomial](#polynomial)
+- [Regression](#regression)
+- [Regularization](#regularization)
+- [Statistics](#statistics)
+
+## Array
 
 Create an array from a Ruby array
 
