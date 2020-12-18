@@ -11,6 +11,26 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.absolute_sum_of_changes(tss)
   end
 
+  def test_auto_covariance
+    expected = [2.0, 0.8, -0.2, -0.8, -0.8]
+    assert_elements_in_delta expected, Khiva::Features.auto_covariance(tss)
+  end
+
+  def test_binned_entropy
+    expected = [1.0549201965332031]
+    assert_elements_in_delta expected, Khiva::Features.binned_entropy(tss, 3)
+  end
+
+  def test_c3
+    expected = [21.0]
+    assert_elements_in_delta expected, Khiva::Features.c3(tss, 3)
+  end
+
+  def test_cid_ce
+    expected = [1.414213562373095]
+    assert_elements_in_delta expected, Khiva::Features.cid_ce(tss, true)
+  end
+
   def test_count_above_mean
     expected = [2]
     assert_elements_in_delta expected, Khiva::Features.count_above_mean(tss)

@@ -211,6 +211,30 @@ Absolute sum of changes
 Khiva::Features.absolute_sum_of_changes(tss)
 ```
 
+Auto-covariance
+
+```ruby
+Khiva::Features.auto_covariance(tss, unbiased: false)
+```
+
+Binned entropy
+
+```ruby
+Khiva::Features.binned_entropy(tss, max_bins)
+```
+
+Schreiber, T. and Schmitz, A. (1997) measure of non-linearity
+
+```ruby
+Khiva::Features.c3(tss, lag)
+```
+
+Estimate of complexity defined by Batista, Gustavo EAPA, et al (2014)
+
+```ruby
+Khiva::Features.cid_ce(tss, z_normalize)
+```
+
 Number of values above the mean
 
 ```ruby

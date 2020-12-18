@@ -16,6 +16,24 @@ print()
 
 # ---
 
+print('auto_covariance')
+print(auto_covariance(a).to_list())
+print()
+
+print('binned_entropy')
+print(binned_entropy(a, 3).to_list())
+print()
+
+print('c3')
+print(c3(a, 3).to_list())
+print()
+
+print('cid_ce')
+print(cid_ce(a, True).to_list())
+print()
+
+# ---
+
 print('count_above_mean')
 print(count_above_mean(a).to_list())
 print()

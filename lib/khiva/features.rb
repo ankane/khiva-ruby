@@ -13,6 +13,30 @@ module Khiva
         Array.new(result)
       end
 
+      def auto_covariance(arr, unbiased: false)
+        result = Utils.create_ptr
+        FFI.call(:auto_covariance, arr, Utils.bool_ptr(unbiased), result)
+        Array.new(result)
+      end
+
+      def binned_entropy(arr, max_bins)
+        result = Utils.create_ptr
+        FFI.call(:binned_entropy, arr, Utils.int_ptr(max_bins), result)
+        Array.new(result)
+      end
+
+      def c3(arr, lag)
+        result = Utils.create_ptr
+        FFI.call(:c3, arr, Utils.long_ptr(lag), result)
+        Array.new(result)
+      end
+
+      def cid_ce(arr, z_normalize)
+        result = Utils.create_ptr
+        FFI.call(:cid_ce, arr, Utils.bool_ptr(z_normalize), result)
+        Array.new(result)
+      end
+
       def count_above_mean(arr)
         result = Utils.create_ptr
         FFI.call(:count_above_mean, arr, result)
