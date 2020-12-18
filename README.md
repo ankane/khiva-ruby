@@ -121,6 +121,14 @@ Squared Euclidean distance
 Khiva::Distances.squared_euclidean(tss)
 ```
 
+## Features
+
+Sum of square values
+
+```ruby
+Khiva::Features.abs_energy(tss)
+```
+
 ## Normalization
 
 Decimal scaling
