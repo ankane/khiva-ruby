@@ -153,6 +153,48 @@ Covariance
 Khiva::Statistics.covariance(tss, unbiased: false)
 ```
 
+Kurtosis
+
+```ruby
+Khiva::Statistics.kurtosis(tss)
+```
+
+Ljung-Box
+
+```ruby
+Khiva::Statistics.ljung_box(tss, lags)
+```
+
+Moment
+
+```ruby
+Khiva::Statistics.moment(tss, k)
+```
+
+Quantile
+
+```ruby
+Khiva::Statistics.quantile(tss, q, precision: 1e-8)
+```
+
+Quantiles cut
+
+```ruby
+Khiva::Statistics.quantiles_cut(tss, quantiles, precision: 1e-8)
+```
+
+Standard deviation
+
+```ruby
+Khiva::Statistics.sample_stdev(tss)
+```
+
+Skewness
+
+```ruby
+Khiva::Statistics.skewness(tss)
+```
+
 ## Khiva Installation
 
 ### Linux
