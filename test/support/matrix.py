@@ -19,3 +19,11 @@ print(find_best_n_discords_result[0].to_list())
 print(find_best_n_discords_result[1].to_list())
 print(find_best_n_discords_result[2].to_list())
 print()
+
+find_best_n_motifs_result = find_best_n_motifs(stomp_result[0], stomp_result[1], 2, 2)
+
+print('find_best_n_motifs_result')
+print(find_best_n_motifs_result[0].to_list())
+print(find_best_n_motifs_result[1].to_list())
+print(find_best_n_motifs_result[2].to_list())
+print()

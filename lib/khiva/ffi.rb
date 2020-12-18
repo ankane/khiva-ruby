@@ -57,6 +57,7 @@ module Khiva
 
     # matrix.h
     extern "void find_best_n_discords(const khiva_array *profile, const khiva_array *index, long m, long n, khiva_array *discord_distances, khiva_array *discord_indices, khiva_array *subsequence_indices, bool self_join, int *error_code, char *error_message)"
+    extern "void find_best_n_motifs(const khiva_array *profile, const khiva_array *index, long m, long n, khiva_array *motif_distances, khiva_array *motif_indices, khiva_array *subsequence_indices, bool self_join, int *error_code, char *error_message)"
     extern "void stomp(const khiva_array *tssa, const khiva_array *tssb, long m, khiva_array *p, khiva_array *i, int *error_code, char *error_message)"
 
     # normalization.h

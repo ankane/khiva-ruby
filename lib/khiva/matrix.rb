@@ -9,6 +9,14 @@ module Khiva
         [Array.new(discord_distances), Array.new(discord_indices), Array.new(subsequence_indices)]
       end
 
+      def find_best_n_motifs(profile, index, m, n, self_join: false)
+        motif_distances = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        motif_indices = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        subsequence_indices = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:find_best_n_motifs, profile, index, m, n, motif_distances, motif_indices, subsequence_indices, self_join ? 1 : 0)
+        [Array.new(motif_distances), Array.new(motif_indices), Array.new(subsequence_indices)]
+      end
+
       def stomp(tssa, tssb, m)
         profile = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
         index = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
