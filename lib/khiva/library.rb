@@ -14,6 +14,12 @@ module Khiva
         info.to_s
       end
 
+      def backend
+        backend = Fiddle::Pointer.malloc(Fiddle::SIZEOF_INT)
+        FFI.call(:get_backend, backend)
+        BACKENDS.map(&:reverse).to_h[backend.to_s(backend.size).unpack1("i")]
+      end
+
       def set_backend(backend)
         b = BACKENDS[backend]
         raise Error, "Invalid backend: #{backend}" unless b

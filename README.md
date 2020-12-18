@@ -323,6 +323,12 @@ Get backend info
 Khiva::Library.backend_info
 ```
 
+Get backend
+
+```ruby
+Khiva::Library.backend
+```
+
 Set backend
 
 ```ruby

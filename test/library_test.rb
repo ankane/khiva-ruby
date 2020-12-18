@@ -5,6 +5,10 @@ class LibraryTest < Minitest::Test
     assert_match "ArrayFire", Khiva::Library.backend_info
   end
 
+  def test_backend
+    assert_equal :cpu, Khiva::Library.backend
+  end
+
   def test_device_id
     assert_equal 0, Khiva::Library.device_id
   end
