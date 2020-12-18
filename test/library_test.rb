@@ -9,6 +9,11 @@ class LibraryTest < Minitest::Test
     assert_equal :cpu, Khiva::Library.backend
   end
 
+  def test_backends
+    expected = mac? ? [:cpu, :opencl] : [:cpu]
+    assert_equal expected, Khiva::Library.backends
+  end
+
   def test_device_id
     assert_equal 0, Khiva::Library.device_id
   end

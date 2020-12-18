@@ -21,6 +21,10 @@ class Minitest::Test
       end
     end
   end
+
+  def mac?
+    RbConfig::CONFIG["host_os"] =~ /darwin/i
+  end
 end
 
 Khiva::Library.set_backend(:cpu)

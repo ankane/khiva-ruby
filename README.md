@@ -339,10 +339,16 @@ Get backend info
 Khiva::Library.backend_info
 ```
 
-Get backend
+Get current backend
 
 ```ruby
 Khiva::Library.backend
+```
+
+Get available backends
+
+```ruby
+Khiva::Library.backends
 ```
 
 Set backend - `:default`, `:cpu`, `:cuda`, `:opencl`
