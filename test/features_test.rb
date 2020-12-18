@@ -63,7 +63,7 @@ class FeaturesTest < Minitest::Test
   def test_longest_strike_above_mean
     expected = [2]
     assert_elements_in_delta expected, Khiva::Features.longest_strike_above_mean(tss)
-end
+  end
 
   def test_longest_strike_below_mean
     expected = [2]
