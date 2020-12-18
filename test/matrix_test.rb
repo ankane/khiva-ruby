@@ -32,7 +32,7 @@ class MatrixTest < Minitest::Test
   end
 
   def test_matrix_profile
-    skip if ENV["CI"] # TODO debug
+    skip if ci? # TODO debug
 
     profile, index = Khiva::Matrix.matrix_profile(a1, a2, 3)
     expected = [1.7320508075688772, 2.449489742783178, 2.449489742783178, 2.449489742783178, 2.449489742783178, 2.449489742783178, 2.449489742783178, 2.449489742783178, 2.449489742783178, 1.7320508075688772]
@@ -41,7 +41,7 @@ class MatrixTest < Minitest::Test
   end
 
   def test_matrix_profile_self_join
-    skip if ENV["CI"] # TODO debug
+    skip if ci? # TODO debug
 
     profile, index = Khiva::Matrix.matrix_profile_self_join(a1, 3)
     expected = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
