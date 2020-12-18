@@ -11,6 +11,31 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.absolute_sum_of_changes(tss)
   end
 
+  def test_count_above_mean
+    expected = [2]
+    assert_elements_in_delta expected, Khiva::Features.count_above_mean(tss)
+  end
+
+  def test_count_below_mean
+    expected = [2]
+    assert_elements_in_delta expected, Khiva::Features.count_below_mean(tss)
+  end
+
+  def test_fft_aggregated
+    expected = [0.434631407211718, 0.485985279952239, Float::NAN, Float::NAN]
+    assert_elements_in_delta expected, Khiva::Features.fft_aggregated(tss)
+  end
+
+  def test_first_location_of_maximum
+    expected = [0.8]
+    assert_elements_in_delta expected, Khiva::Features.first_location_of_maximum(tss)
+  end
+
+  def test_first_location_of_minimum
+    expected = [0]
+    assert_elements_in_delta expected, Khiva::Features.first_location_of_minimum(tss)
+  end
+
   def test_last_location_of_maximum
     expected = [1]
     assert_elements_in_delta expected, Khiva::Features.last_location_of_maximum(tss)

@@ -13,6 +13,8 @@ class Minitest::Test
       else
         if exp.finite?
           assert_in_delta exp, act
+        elsif exp.respond_to?(:nan?) && exp.nan?
+          assert act.nan?
         else
           assert_equal exp, act
         end

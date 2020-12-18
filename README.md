@@ -159,6 +159,36 @@ Absolute sum of changes
 Khiva::Features.absolute_sum_of_changes(tss)
 ```
 
+Number of values above the mean
+
+```ruby
+Khiva::Features.count_above_mean(tss)
+```
+
+Number of values below the mean
+
+```ruby
+Khiva::Features.count_below_mean(tss)
+```
+
+The spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform spectrum
+
+```ruby
+Khiva::Features.fft_aggregated(tss)
+```
+
+First location of the maximum value
+
+```ruby
+Khiva::Features.first_location_of_maximum(tss)
+```
+
+First location of the minimum value
+
+```ruby
+Khiva::Features.first_location_of_minimum(tss)
+```
+
 Last location of the maximum value
 
 ```ruby

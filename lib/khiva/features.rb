@@ -13,6 +13,36 @@ module Khiva
         Array.new(result)
       end
 
+      def count_above_mean(arr)
+        result = Utils.create_ptr
+        FFI.call(:count_above_mean, arr, result)
+        Array.new(result)
+      end
+
+      def count_below_mean(arr)
+        result = Utils.create_ptr
+        FFI.call(:count_below_mean, arr, result)
+        Array.new(result)
+      end
+
+      def fft_aggregated(arr)
+        result = Utils.create_ptr
+        FFI.call(:fft_aggregated, arr, result)
+        Array.new(result)
+      end
+
+      def first_location_of_maximum(arr)
+        result = Utils.create_ptr
+        FFI.call(:first_location_of_maximum, arr, result)
+        Array.new(result)
+      end
+
+      def first_location_of_minimum(arr)
+        result = Utils.create_ptr
+        FFI.call(:first_location_of_minimum, arr, result)
+        Array.new(result)
+      end
+
       def last_location_of_maximum(arr)
         result = Utils.create_ptr
         FFI.call(:last_location_of_maximum, arr, result)
