@@ -201,6 +201,28 @@ Khiva::Normalization.znorm(tss)
 Khiva::Normalization.znorm!(tss)
 ```
 
+## Polynomial
+
+Least squares polynomial fit
+
+```ruby
+Khiva::Polynomial.polyfit(x, y, deg)
+```
+
+## Regression
+
+Linear least squares regression
+
+```ruby
+slope, intercept, rvalue, pvalue, stderrest = Khiva::Regression.linear(xss, yss)
+```
+
+## Regularization
+
+```ruby
+Khiva::Regularization.group_by(tss, aggregation_function, columns_key: 1, n_columns_value: 1)
+```
+
 ## Statistics
 
 Covariance
