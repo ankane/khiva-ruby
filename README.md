@@ -145,6 +145,26 @@ Sum of square values
 Khiva::Features.abs_energy(tss)
 ```
 
+## Library
+
+Set backend
+
+```ruby
+Khiva::Library.set_backend(:cpu)
+```
+
+Set device
+
+```ruby
+Khiva::Library.set_device(0)
+```
+
+## Linalg
+
+```ruby
+Khiva::Linalg.lls(a, b)
+```
+
 ## Normalization
 
 Decimal scaling

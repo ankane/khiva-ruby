@@ -62,6 +62,9 @@ module Khiva
     extern "void set_device_memory_in_gb(const double *memory, int *error_code, char *error_message)"
     extern "void version(char **v, int *error_code, char *error_message)"
 
+    # linalg.h
+    extern "void lls(const khiva_array *a, const khiva_array *b, khiva_array *result, int *error_code, char *error_message)"
+
     # distances.h
     extern "void dtw(const khiva_array *tss, khiva_array *result, int *error_code, char *error_message)"
     extern "void euclidean(const khiva_array *tss, khiva_array *result, int *error_code, char *error_message)"
