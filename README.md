@@ -157,10 +157,32 @@ Khiva::Statistics.covariance(tss, unbiased: false)
 
 ### Linux
 
-Run:
+Install Boost and Eigen:
 
 ```sh
-# todo
+sudo apt-get install libboost-all-dev libeigen3-dev
+```
+
+Install ArrayFire:
+
+```sh
+wget -q https://arrayfire.s3.amazonaws.com/3.7.3/ArrayFire-v3.7.3_Linux_x86_64.sh
+chmod +x ./ArrayFire-v3.7.3_Linux_x86_64.sh
+./ArrayFire-v3.7.3_Linux_x86_64.sh --include-subdir --prefix=/opt
+echo /opt/arrayfire/lib64 | sudo tee /etc/ld.so.conf.d/arrayfire.conf
+sudo ldconfig
+```
+
+And install Khiva:
+
+```sh
+git clone --recursive --branch v0.5.0 https://github.com/shapelets/khiva
+cd khiva
+mkdir build
+cd build
+cmake .. -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_TESTS=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_BUILD_JNI_BINDINGS=OFF
+make -j4
+sudo make install
 ```
 
 ### Mac
