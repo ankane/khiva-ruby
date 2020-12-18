@@ -44,7 +44,12 @@ module Khiva
     # library.h
     extern "void backend_info(char **info, int *error_code, char *error_message)"
     extern "void set_backend(const int *backend, int *error_code, char *error_message)"
+    extern "void get_backend(int *backend, int *error_code, char *error_message)"
+    extern "void get_backends(int *backends, int *error_code, char *error_message)"
     extern "void set_device(const int *device, int *error_code, char *error_message)"
+    extern "void get_device_id(int *device_id, int *error_code, char *error_message)"
+    extern "void get_device_count(int *device_count, int *error_code, char *error_message)"
+    extern "void set_device_memory_in_gb(const double *memory, int *error_code, char *error_message)"
     extern "void version(char **v, int *error_code, char *error_message)"
 
     # distances.h
@@ -58,7 +63,14 @@ module Khiva
     # matrix.h
     extern "void find_best_n_discords(const khiva_array *profile, const khiva_array *index, long m, long n, khiva_array *discord_distances, khiva_array *discord_indices, khiva_array *subsequence_indices, bool self_join, int *error_code, char *error_message)"
     extern "void find_best_n_motifs(const khiva_array *profile, const khiva_array *index, long m, long n, khiva_array *motif_distances, khiva_array *motif_indices, khiva_array *subsequence_indices, bool self_join, int *error_code, char *error_message)"
+    extern "void find_best_n_occurrences(const khiva_array *q, const khiva_array *t, long n, khiva_array *distances, khiva_array *indexes, int *error_code, char *error_message)"
+    extern "void mass(const khiva_array *q, const khiva_array *t, khiva_array *distances, int *error_code, char *error_message)"
     extern "void stomp(const khiva_array *tssa, const khiva_array *tssb, long m, khiva_array *p, khiva_array *i, int *error_code, char *error_message)"
+    extern "void stomp_self_join(const khiva_array *tss, long m, khiva_array *p, khiva_array *i, int *error_code, char *error_message)"
+    extern "void matrix_profile(const khiva_array *tssa, const khiva_array *tssb, long m, khiva_array *p, khiva_array *i, int *error_code, char *error_message)"
+    extern "void matrix_profile_self_join(const khiva_array *tss, long m, khiva_array *p, khiva_array *i, int *error_code, char *error_message)"
+    extern "void matrix_profile_lr(const khiva_array *tss, long m, khiva_array *pleft, khiva_array *ileft, khiva_array *pright, khiva_array *iright, int *error_code, char *error_message)"
+    extern "void get_chains(const khiva_array *tss, long m, khiva_array *chains, int *error_code, char *error_message)"
 
     # normalization.h
     extern "void decimal_scaling_norm(const khiva_array *tss, khiva_array *result, int *error_code, char *error_message)"
