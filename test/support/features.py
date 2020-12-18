@@ -14,6 +14,8 @@ print('absolute_sum_of_changes')
 print(absolute_sum_of_changes(a).to_list())
 print()
 
+# ---
+
 print('maximum')
 print(maximum(a).to_list())
 print()
@@ -40,4 +42,18 @@ print()
 
 print('minimum')
 print(minimum(a).to_list())
+print()
+
+# ---
+
+print('value_count')
+print(value_count(a, 3).to_list())
+print()
+
+print('variance')
+print(variance(a).to_list())
+print()
+
+print('variance_larger_than_standard_deviation')
+print(variance_larger_than_standard_deviation(a).to_list())
 print()

@@ -201,6 +201,24 @@ Minimum
 Khiva::Features.minimum(tss)
 ```
 
+Occurrences of a value
+
+```ruby
+Khiva::Features.value_count(tss, v)
+```
+
+Variance
+
+```ruby
+Khiva::Features.variance(tss)
+```
+
+If variance is larger than one
+
+```ruby
+Khiva::Features.variance_larger_than_standard_deviation(tss)
+```
+
 ## Library
 
 Get backend info

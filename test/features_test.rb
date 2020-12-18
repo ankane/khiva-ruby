@@ -46,6 +46,21 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.minimum(tss)
   end
 
+  def test_value_count
+    expected = [1]
+    assert_elements_in_delta expected, Khiva::Features.value_count(tss, 3)
+  end
+
+  def test_variance
+    expected = [2.5]
+    assert_elements_in_delta expected, Khiva::Features.variance(tss)
+  end
+
+  def test_variance_larger_than_standard_deviation
+    expected = [true]
+    assert_equal expected, Khiva::Features.variance_larger_than_standard_deviation(tss).to_a
+  end
+
   def tss
     Khiva::Array.new([1, 2, 3, 4, 5], type: :f32)
   end

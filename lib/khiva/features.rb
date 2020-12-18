@@ -54,6 +54,24 @@ module Khiva
         FFI.call(:minimum, arr, result)
         Array.new(result)
       end
+
+      def value_count(arr, v)
+        result = Utils.create_ptr
+        FFI.call(:value_count, arr, Utils.float_ptr(v), result)
+        Array.new(result)
+      end
+
+      def variance(arr)
+        result = Utils.create_ptr
+        FFI.call(:variance, arr, result)
+        Array.new(result)
+      end
+
+      def variance_larger_than_standard_deviation(arr)
+        result = Utils.create_ptr
+        FFI.call(:variance_larger_than_standard_deviation, arr, result)
+        Array.new(result)
+      end
     end
   end
 end
