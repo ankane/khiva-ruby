@@ -33,13 +33,13 @@ profile, index = Khiva::Matrix.stomp(a, b, 3)
 Find discords
 
 ```ruby
-discord_distances, discord_indices, subsequence_indices = Khiva::Matrix.find_best_n_discords(profile, index, 2, 2)
+distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, 2, 2)
 ```
 
 Find motifs
 
 ```ruby
-motif_distances, motif_indices, subsequence_indices = Khiva::Matrix.find_best_n_motifs(profile, index, 2, 2)
+distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, 2, 2)
 ```
 
 ## Modules
@@ -392,25 +392,25 @@ Khiva::Linalg.lls(a, b)
 Calculate the matrix profile between `ta` and `tb` using a subsequence length of `m` with the STOMP algorithm
 
 ```ruby
-Khiva::Matrix.stomp(ta, tb, m)
+profile, index = Khiva::Matrix.stomp(ta, tb, m)
 ```
 
 Calculate the matrix profile between `t` and itself using a subsequence length of `m` with the STOMP algorithm
 
 ```ruby
-Khiva::Matrix.stomp_self_join(t, m)
+profile, index = Khiva::Matrix.stomp_self_join(t, m)
 ```
 
 Calculate the matrix profile between `ta` and `tb` using a subsequence length of `m`
 
 ```ruby
-Khiva::Matrix.matrix_profile(ta, tb, m)
+profile, index = Khiva::Matrix.matrix_profile(ta, tb, m)
 ```
 
 Calculate the matrix profile between `t` and itself using a subsequence length of `m`
 
 ```ruby
-Khiva::Matrix.matrix_profile_self_join(t, m)
+profile, index = Khiva::Matrix.matrix_profile_self_join(t, m)
 ```
 
 ## Normalization
