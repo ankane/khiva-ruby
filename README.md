@@ -85,10 +85,16 @@ a.ge(b)
 
 ## Clustering
 
-k-means
+k-means algorithm
 
 ```ruby
 centroids, labels = Khiva::Clustering.k_means(tss, k)
+```
+
+k-Shape algorithm
+
+```ruby
+centroids, labels = Khiva::Clustering.k_shape(tss, k)
 ```
 
 ## Dimensionality

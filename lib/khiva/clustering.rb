@@ -7,6 +7,13 @@ module Khiva
         FFI.call(:k_means, tss, Utils.int_ptr(k), centroids, labels, Utils.float_ptr(tolerance), Utils.int_ptr(max_iterations))
         [Array.new(centroids), Array.new(labels)]
       end
+
+      def k_shape(tss, k, tolerance: 1e-10, max_iterations: 100)
+        centroids = Utils.create_ptr
+        labels = Utils.create_ptr
+        FFI.call(:k_shape, tss, Utils.int_ptr(k), centroids, labels, Utils.float_ptr(tolerance), Utils.int_ptr(max_iterations))
+        [Array.new(centroids), Array.new(labels)]
+      end
     end
   end
 end
