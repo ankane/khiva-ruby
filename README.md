@@ -147,6 +147,12 @@ Khiva::Features.abs_energy(tss)
 
 ## Library
 
+Get backend info
+
+```ruby
+Khiva::Library.backend_info
+```
+
 Set backend
 
 ```ruby
