@@ -33,13 +33,13 @@ profile, index = Khiva::Matrix.stomp(a, b, 3)
 Find discords
 
 ```ruby
-distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, 2, 2)
+distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, 3, 2)
 ```
 
 Find motifs
 
 ```ruby
-distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, 2, 2)
+distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, 3, 2)
 ```
 
 ## Modules
