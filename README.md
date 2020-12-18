@@ -91,6 +91,14 @@ k-means
 centroids, labels = Khiva::Clustering.k_means(tss, k)
 ```
 
+## Dimensionality
+
+Piecewise aggregate approximate (PAA)
+
+```ruby
+Khiva::Dimensionality.paa(a, bins)
+```
+
 ## Distances
 
 Dynamic time warping (DTW) distance

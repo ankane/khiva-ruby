@@ -45,6 +45,9 @@ module Khiva
     extern "void k_means(const khiva_array *tss, const int *k, khiva_array *centroids, khiva_array *labels, const float *tolerance, const int *max_iterations, int *error_code, char *error_message)"
     extern "void k_shape(const khiva_array *tss, const int *k, khiva_array *centroids, khiva_array *labels, const float *tolerance, const int *max_iterations, int *error_code, char *error_message)"
 
+    # dimensionality.h
+    extern "void paa(const khiva_array *a, const int *bins, khiva_array *result, int *error_code, char *error_message)"
+
     # features.h
     extern "void abs_energy(const khiva_array *array, khiva_array *result, int *error_code, char *error_message)"
 

@@ -1,6 +1,6 @@
 ## 0.1.1 (unreleased)
 
-- Added features and clustering
+- Added clustering, dimensionality, and features
 - Added more statistics
 - Added `find_best_n_motifs` method
 
