@@ -82,6 +82,7 @@ module Khiva
     def to_a
       d = dims
       d.pop while d.last == 1 && d.size > 1
+      d.reverse!
 
       elements = dims.inject(1, &:*)
       data = Fiddle::Pointer.malloc(elements * element_size)

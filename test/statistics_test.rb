@@ -29,7 +29,7 @@ class StatisticsTest < Minitest::Test
 
   def test_quantiles_cut
     expected = [[0.9999999900000001, 0.9999999900000001, 2.333333373069763, 3.6666667461395264, 3.6666667461395264], [2.333333373069763, 2.333333373069763, 3.6666667461395264, 5.0, 5.0]]
-    # assert_elements_in_delta expected, Khiva::Statistics.quantiles_cut(tss, 3).to_a
+    assert_elements_in_delta expected, Khiva::Statistics.quantiles_cut(tss, 3).to_a
   end
 
   def test_sample_stdev
