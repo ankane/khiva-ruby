@@ -6,7 +6,15 @@ module Khiva
       end
 
       def int_ptr(v)
-        Fiddle::Pointer[[v].pack("i*")]
+        Fiddle::Pointer[[v].pack("i")]
+      end
+
+      def long_ptr(v)
+        Fiddle::Pointer[[v].pack("L!")]
+      end
+
+      def float_ptr(v)
+        Fiddle::Pointer[[v].pack("f")]
       end
 
       def double_ptr(v)
