@@ -24,6 +24,22 @@ module Khiva
         FFI.call(:set_device, Utils.int_ptr(device))
       end
 
+      def device_id
+        device_id = Fiddle::Pointer.malloc(Fiddle::SIZEOF_INT)
+        FFI.call(:get_device_id, device_id)
+        device_id.to_s(device_id.size).unpack1("i")
+      end
+
+      def device_count
+        device_count = Fiddle::Pointer.malloc(Fiddle::SIZEOF_INT)
+        FFI.call(:get_device_count, device_count)
+        device_count.to_s(device_count.size).unpack1("i")
+      end
+
+      def set_device_memory_in_gb(memory)
+        FFI.call(:set_device_memory_in_gb, Utils.double_ptr(memory))
+      end
+
       def version
         v = Fiddle::Pointer.malloc(20)
         FFI.call(:version, v.ref)

@@ -335,6 +335,24 @@ Set device
 Khiva::Library.set_device(0)
 ```
 
+Get device id
+
+```ruby
+Khiva::Library.device_id
+```
+
+Get device count
+
+```ruby
+Khiva::Library.device_count
+```
+
+Set device memory in GB
+
+```ruby
+Khiva::Library.set_device_memory_in_gb(1.5)
+```
+
 Version
 
 ```ruby
