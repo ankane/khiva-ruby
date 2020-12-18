@@ -117,10 +117,46 @@ centroids, labels = Khiva::Clustering.k_shape(tss, k)
 
 ## Dimensionality
 
-Piecewise aggregate approximate (PAA)
+Piecewise Aggregate Approximation (PAA)
 
 ```ruby
 Khiva::Dimensionality.paa(a, bins)
+```
+
+Perceptually Important Points (PIP)
+
+```ruby
+Khiva::Dimensionality.pip(a, number_ips)
+```
+
+Piecewise Linear Approximation (PLA Bottom Up)
+
+```ruby
+Khiva::Dimensionality.pla_bottom_up(a, max_error)
+```
+
+Piecewise Linear Approximation (PLA Sliding Window)
+
+```ruby
+Khiva::Dimensionality.pla_sliding_window(a, max_error)
+```
+
+Ramer-Douglas-Peucker (RDP)
+
+```ruby
+Khiva::Dimensionality.ramer_douglas_peucker(a, epsilon)
+```
+
+Symbolic Aggregate ApproXimation (SAX)
+
+```ruby
+Khiva::Dimensionality.sax(a, alphabet_size)
+```
+
+Visvalingam
+
+```ruby
+Khiva::Dimensionality.visvalingam(a, num_points)
 ```
 
 ## Distances
