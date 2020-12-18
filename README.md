@@ -297,7 +297,7 @@ Sum of values
 Khiva::Features.sum_values(tss)
 ```
 
-Occurrences of a value
+Number of occurrences of a value
 
 ```ruby
 Khiva::Features.value_count(tss, v)
