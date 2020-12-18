@@ -151,6 +151,12 @@ Sum of square values
 Khiva::Features.abs_energy(tss)
 ```
 
+Absolute sum of changes
+
+```ruby
+Khiva::Features.absolute_sum_of_changes(tss)
+```
+
 ## Library
 
 Get backend info

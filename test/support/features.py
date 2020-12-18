@@ -9,3 +9,7 @@ a = Array.from_list([1, 2, 3, 4, 5], dtype.f64)
 print('abs_energy')
 print(abs_energy(a).to_list())
 print()
+
+print('absolute_sum_of_changes')
+print(absolute_sum_of_changes(a).to_list())
+print()
