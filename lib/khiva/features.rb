@@ -205,9 +205,33 @@ module Khiva
         Array.new(result)
       end
 
+      def sum_of_reoccurring_datapoints(arr, sorted: false)
+        result = Utils.create_ptr
+        FFI.call(:sum_of_reoccurring_datapoints, arr, Utils.bool_ptr(sorted), result)
+        Array.new(result)
+      end
+
+      def sum_of_reoccurring_values(arr, sorted: false)
+        result = Utils.create_ptr
+        FFI.call(:sum_of_reoccurring_values, arr, Utils.bool_ptr(sorted), result)
+        Array.new(result)
+      end
+
       def sum_values(arr)
         result = Utils.create_ptr
         FFI.call(:sum_values, arr, result)
+        Array.new(result)
+      end
+
+      def symmetry_looking(arr, r)
+        result = Utils.create_ptr
+        FFI.call(:symmetry_looking, arr, Utils.float_ptr(r), result)
+        Array.new(result)
+      end
+
+      def time_reversal_asymmetry_statistic(arr, lag)
+        result = Utils.create_ptr
+        FFI.call(:time_reversal_asymmetry_statistic, arr, Utils.int_ptr(lag), result)
         Array.new(result)
       end
 

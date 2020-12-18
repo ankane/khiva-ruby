@@ -162,13 +162,25 @@ print('standard_deviation')
 print(standard_deviation(a).to_list())
 print()
 
-# ---
+print('sum_of_reoccurring_datapoints')
+print(sum_of_reoccurring_datapoints(a).to_list())
+print()
+
+print('sum_of_reoccurring_values')
+print(sum_of_reoccurring_values(a).to_list())
+print()
 
 print('sum_values')
 print(sum_values(a).to_list())
 print()
 
-# ---
+print('symmetry_looking')
+print(symmetry_looking(a, 0.5).to_list())
+print()
+
+print('time_reversal_asymmetry_statistic')
+print(time_reversal_asymmetry_statistic(a, 2).to_list())
+print()
 
 print('value_count')
 print(value_count(a, 3).to_list())

@@ -403,10 +403,34 @@ Standard deviation
 Khiva::Features.standard_deviation(tss)
 ```
 
+Sum of all data points present more than once
+
+```ruby
+Khiva::Features.sum_of_reoccurring_datapoints(tss, sorted: false)
+```
+
+Sum of all values present more than once
+
+```ruby
+Khiva::Features.sum_of_reoccurring_values(tss, sorted: false)
+```
+
 Sum of values
 
 ```ruby
 Khiva::Features.sum_values(tss)
+```
+
+If looks symmetric
+
+```ruby
+Khiva::Features.symmetry_looking(tss, r)
+```
+
+Time reversal asymmetry
+
+```ruby
+Khiva::Features.time_reversal_asymmetry_statistic(tss, lag)
 ```
 
 Number of occurrences of a value

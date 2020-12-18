@@ -175,9 +175,29 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.standard_deviation(tss)
   end
 
+  def test_sum_of_reoccurring_datapoints
+    expected = [0]
+    assert_elements_in_delta expected, Khiva::Features.sum_of_reoccurring_datapoints(tss)
+  end
+
+  def test_sum_of_reoccurring_values
+    expected = [0]
+    assert_elements_in_delta expected, Khiva::Features.sum_of_reoccurring_values(tss)
+  end
+
   def test_sum_values
     expected = [15]
     assert_elements_in_delta expected, Khiva::Features.sum_values(tss)
+  end
+
+  def test_symmetry_looking
+    expected = [true]
+    assert_equal expected, Khiva::Features.symmetry_looking(tss, 0.5).to_a
+  end
+
+  def test_time_reversal_asymmetry_statistic
+    expected = [72]
+    assert_elements_in_delta expected, Khiva::Features.time_reversal_asymmetry_statistic(tss, 2)
   end
 
   def test_value_count
