@@ -6,7 +6,7 @@
 
 ## Installation
 
-First, [install Khiva](#khiva-installation). For Homebrew use:
+First, [install Khiva](#khiva-installation). For Homebrew, use:
 
 ```sh
 brew install khiva
