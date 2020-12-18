@@ -353,7 +353,7 @@ Set device memory in GB
 Khiva::Library.set_device_memory_in_gb(1.5)
 ```
 
-Version
+Get version
 
 ```ruby
 Khiva::Library.version
