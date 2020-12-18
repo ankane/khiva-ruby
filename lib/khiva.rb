@@ -37,8 +37,6 @@ module Khiva
   autoload :FFI, "khiva/ffi"
 
   def self.lib_version
-    v = Fiddle::Pointer.malloc(20)
-    FFI.call(:version, v.ref)
-    v.to_s
+    Library.version
   end
 end

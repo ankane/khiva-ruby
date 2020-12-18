@@ -165,6 +165,12 @@ Set device
 Khiva::Library.set_device(0)
 ```
 
+Version
+
+```ruby
+Khiva::Library.version
+```
+
 ## Linalg
 
 ```ruby

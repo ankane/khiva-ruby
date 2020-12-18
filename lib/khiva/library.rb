@@ -23,6 +23,12 @@ module Khiva
       def set_device(device)
         FFI.call(:set_device, Utils.int_ptr(device))
       end
+
+      def version
+        v = Fiddle::Pointer.malloc(20)
+        FFI.call(:version, v.ref)
+        v.to_s
+      end
     end
   end
 end
