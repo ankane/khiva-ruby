@@ -2,6 +2,8 @@
 
 [Khiva](https://github.com/shapelets/khiva) - high-performance time series algorithms - for Ruby
 
+:fire: Runs on GPUs and CPUs
+
 [![Build Status](https://github.com/ankane/khiva-ruby/workflows/build/badge.svg?branch=master)](https://github.com/ankane/khiva-ruby/actions)
 
 ## Installation
