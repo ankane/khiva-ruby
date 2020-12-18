@@ -4,6 +4,7 @@ require "fiddle/import"
 # modules
 require "khiva/array"
 require "khiva/distances"
+require "khiva/features"
 require "khiva/library"
 require "khiva/matrix"
 require "khiva/normalization"

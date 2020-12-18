@@ -41,6 +41,13 @@ module Khiva
     extern "void khiva_not(const khiva_array *array, khiva_array *result, int *error_code, char *error_message)"
     extern "void copy(const khiva_array *array, khiva_array *result, int *error_code, char *error_message)"
 
+    # clustering.h
+    extern "void k_means(const khiva_array *tss, const int *k, khiva_array *centroids, khiva_array *labels, const float *tolerance, const int *max_iterations, int *error_code, char *error_message)"
+    extern "void k_shape(const khiva_array *tss, const int *k, khiva_array *centroids, khiva_array *labels, const float *tolerance, const int *max_iterations, int *error_code, char *error_message)"
+
+    # features.h
+    extern "void abs_energy(const khiva_array *array, khiva_array *result, int *error_code, char *error_message)"
+
     # library.h
     extern "void backend_info(char **info, int *error_code, char *error_message)"
     extern "void set_backend(const int *backend, int *error_code, char *error_message)"
