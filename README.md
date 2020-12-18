@@ -50,7 +50,7 @@ Create an array from a Ruby array
 Khiva::Array.new([1, 2, 3])
 ```
 
-Specify the type
+Specify the type (`:b8`, `:f32`, `:f64`, `:s16`, `:s32`, `:s64`, `:u8`, `:u16`, `:u32`, `:u64`)
 
 ```ruby
 Khiva::Array.new([1, 2, 3], type: :s64)
@@ -329,7 +329,7 @@ Get backend
 Khiva::Library.backend
 ```
 
-Set backend
+Set backend (`:default`, `:cpu`, `:cuda`, or `:opencl`)
 
 ```ruby
 Khiva::Library.set_backend(:cpu)
@@ -338,7 +338,7 @@ Khiva::Library.set_backend(:cpu)
 Set device
 
 ```ruby
-Khiva::Library.set_device(0)
+Khiva::Library.set_device(device_id)
 ```
 
 Get device id
