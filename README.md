@@ -159,6 +159,48 @@ Absolute sum of changes
 Khiva::Features.absolute_sum_of_changes(tss)
 ```
 
+Maximum
+
+```ruby
+Khiva::Features.maximum(tss)
+```
+
+Mean
+
+```ruby
+Khiva::Features.mean(tss)
+```
+
+Mean absolute change
+
+```ruby
+Khiva::Features.mean_absolute_change(tss)
+```
+
+Mean change
+
+```ruby
+Khiva::Features.mean_change(tss)
+```
+
+Mean of a central approximation of the second derivative
+
+```ruby
+Khiva::Features.mean_second_derivative_central(tss)
+```
+
+Median
+
+```ruby
+Khiva::Features.median(tss)
+```
+
+Minimum
+
+```ruby
+Khiva::Features.minimum(tss)
+```
+
 ## Library
 
 Get backend info
