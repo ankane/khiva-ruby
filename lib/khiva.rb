@@ -3,6 +3,7 @@ require "fiddle/import"
 
 # modules
 require "khiva/array"
+require "khiva/clustering"
 require "khiva/distances"
 require "khiva/features"
 require "khiva/library"

@@ -83,6 +83,14 @@ a.le(b)
 a.ge(b)
 ```
 
+## Clustering
+
+k-means
+
+```ruby
+centroids, labels = Khiva::Clustering.k_means(tss, k)
+```
+
 ## Distances
 
 Dynamic time warping (DTW) distance
