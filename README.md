@@ -371,6 +371,32 @@ Khiva::Library.version
 Khiva::Linalg.lls(a, b)
 ```
 
+## Matrix
+
+Calculate the matrix profile between `ta` and `tb` using a subsequence length of `m` with the STOMP algorithm
+
+```ruby
+Khiva::Matrix.stomp(ta, tb, m)
+```
+
+Calculate the matrix profile between `t` and itself using a subsequence length of `m` with the STOMP algorithm
+
+```ruby
+Khiva::Matrix.stomp_self_join(t, m)
+```
+
+Calculate the matrix profile between `ta` and `tb` using a subsequence length of `m`
+
+```ruby
+Khiva::Matrix.matrix_profile(ta, tb, m)
+```
+
+Calculate the matrix profile between `t` and itself using a subsequence length of `m`
+
+```ruby
+Khiva::Matrix.matrix_profile_self_join(t, m)
+```
+
 ## Normalization
 
 Decimal scaling

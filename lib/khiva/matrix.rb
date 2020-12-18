@@ -23,6 +23,27 @@ module Khiva
         FFI.call(:stomp, tssa, tssb, m, profile, index)
         [Array.new(profile), Array.new(index)]
       end
+
+      def stomp_self_join(tss, m)
+        profile = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        index = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:stomp_self_join, tss, m, profile, index)
+        [Array.new(profile), Array.new(index)]
+      end
+
+      def matrix_profile(tssa, tssb, m)
+        profile = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        index = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:matrix_profile, tssa, tssb, m, profile, index)
+        [Array.new(profile), Array.new(index)]
+      end
+
+      def matrix_profile_self_join(tss, m)
+        profile = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        index = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:matrix_profile_self_join, tss, m, profile, index)
+        [Array.new(profile), Array.new(index)]
+      end
     end
   end
 end
