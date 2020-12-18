@@ -55,6 +55,18 @@ module Khiva
         Array.new(result)
       end
 
+      def ratio_value_number_to_time_series_length(arr)
+        result = Utils.create_ptr
+        FFI.call(:ratio_value_number_to_time_series_length, arr, result)
+        Array.new(result)
+      end
+
+      def sample_entropy(arr)
+        result = Utils.create_ptr
+        FFI.call(:sample_entropy, arr, result)
+        Array.new(result)
+      end
+
       def skewness(arr)
         result = Utils.create_ptr
         FFI.call(:skewness, arr, result)

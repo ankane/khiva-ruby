@@ -11,7 +11,11 @@ class Minitest::Test
       if exp.is_a?(Array)
         assert_elements_in_delta exp, act
       else
-        assert_in_delta exp, act
+        if exp.finite?
+          assert_in_delta exp, act
+        else
+          assert_equal exp, act
+        end
       end
     end
   end

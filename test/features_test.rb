@@ -46,6 +46,16 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.minimum(tss)
   end
 
+  def test_ratio_value_number_to_time_series_length
+    expected = [1]
+    assert_elements_in_delta expected, Khiva::Features.ratio_value_number_to_time_series_length(tss)
+  end
+
+  def test_sample_entropy
+    expected = [Float::INFINITY]
+    assert_elements_in_delta expected, Khiva::Features.sample_entropy(tss)
+  end
+
   def test_skewness
     expected = [0]
     assert_elements_in_delta expected, Khiva::Features.skewness(tss)

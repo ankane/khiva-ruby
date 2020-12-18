@@ -46,6 +46,14 @@ print()
 
 # ---
 
+print('ratio_value_number_to_time_series_length')
+print(ratio_value_number_to_time_series_length(a).to_list())
+print()
+
+print('sample_entropy')
+print(sample_entropy(a).to_list())
+print()
+
 print('skewness')
 print(skewness(a).to_list())
 print()

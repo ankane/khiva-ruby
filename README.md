@@ -201,6 +201,18 @@ Minimum
 Khiva::Features.minimum(tss)
 ```
 
+Ratio of unique values
+
+```ruby
+Khiva::Features.ratio_value_number_to_time_series_length(tss)
+```
+
+Sample entropy
+
+```ruby
+Khiva::Features.sample_entropy(tss)
+```
+
 Skewness
 
 ```ruby
