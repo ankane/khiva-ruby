@@ -157,7 +157,7 @@ Khiva::Statistics.covariance(tss, unbiased: false)
 
 ### Linux
 
-Install Boost and Eigen:
+Install Boost and Eigen. On Ubuntu, use:
 
 ```sh
 sudo apt-get install libboost-all-dev libeigen3-dev
