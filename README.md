@@ -120,29 +120,29 @@ Khiva::Distances.squared_euclidean(tss)
 Decimal scaling
 
 ```ruby
-Khiva::Distances.decimal_scaling_norm(tss)
-Khiva::Distances.decimal_scaling_norm!(tss)
+Khiva::Normalization.decimal_scaling_norm(tss)
+Khiva::Normalization.decimal_scaling_norm!(tss)
 ```
 
 Max min
 
 ```ruby
-Khiva::Distances.max_min_norm(tss)
-Khiva::Distances.max_min_norm!(tss)
+Khiva::Normalization.max_min_norm(tss)
+Khiva::Normalization.max_min_norm!(tss)
 ```
 
 Mean
 
 ```ruby
-Khiva::Distances.mean_norm(tss)
-Khiva::Distances.mean_norm!(tss)
+Khiva::Normalization.mean_norm(tss)
+Khiva::Normalization.mean_norm!(tss)
 ```
 
 Znorm
 
 ```ruby
-Khiva::Distances.znorm(tss)
-Khiva::Distances.znorm!(tss)
+Khiva::Normalization.znorm(tss)
+Khiva::Normalization.znorm!(tss)
 ```
 
 ## Statistics
