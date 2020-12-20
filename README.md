@@ -601,6 +601,24 @@ Khiva::Linalg.lls(a, b)
 
 ## Matrix
 
+Find discords
+
+```ruby
+distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, m, n)
+```
+
+Find motifs
+
+```ruby
+distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, m, n)
+```
+
+Mueen’s Algorithm for Similarity Search (MASS)
+
+```ruby
+distances = Khiva::Matrix.mass(q, t)
+```
+
 Calculate the matrix profile between `ta` and `tb` using a subsequence length of `m` with the STOMP algorithm
 
 ```ruby
