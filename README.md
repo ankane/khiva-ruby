@@ -100,8 +100,7 @@ Find a similar pattern in time series
 ```ruby
 series = Khiva::Array.new([1, 2, 3, 4, 3, 4, 5, 6], type: :f32)
 query = Khiva::Array.new([1, 2, 1], type: :f32)
-distances = Khiva::Matrix.mass(query, series)
-closest_index = distances.to_a.each_with_index.min[1]
+distances, indices = Khiva::Matrix.find_best_n_occurrences(query, series, 1)
 ```
 
 ## Modules

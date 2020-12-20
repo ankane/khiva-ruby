@@ -1,6 +1,6 @@
 ## 0.1.2 (unreleased)
 
-- Added `mass` method
+- Added `find_best_n_occurrences` and `mass` methods
 - Added more dimensionality methods
 - Added more feature methods
 
