@@ -13,6 +13,26 @@ module Khiva
         Array.new(result)
       end
 
+      def aggregated_autocorrelation(arr, aggregation_function)
+        result = Utils.create_ptr
+        FFI.call(:aggregated_autocorrelation, arr, Utils.int_ptr(aggregation_function), result)
+        Array.new(result)
+      end
+
+      # TODO aggregated_linear_trend
+
+      def approximate_entropy(arr, m, r)
+        result = Utils.create_ptr
+        FFI.call(:approximate_entropy, arr, Utils.int_ptr(m), Utils.float_ptr(r), result)
+        Array.new(result)
+      end
+
+      def auto_correlation(arr, max_lag, unbiased)
+        result = Utils.create_ptr
+        FFI.call(:auto_correlation, arr, Utils.long_ptr(max_lag), Utils.bool_ptr(unbiased), result)
+        Array.new(result)
+      end
+
       def auto_covariance(arr, unbiased: false)
         result = Utils.create_ptr
         FFI.call(:auto_covariance, arr, Utils.bool_ptr(unbiased), result)

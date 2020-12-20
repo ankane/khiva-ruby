@@ -11,6 +11,25 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.absolute_sum_of_changes(tss)
   end
 
+  def test_aggregated_autocorrelation
+    expected = [-0.6666666666666666]
+    assert_elements_in_delta expected, Khiva::Features.aggregated_autocorrelation(tss, 0)
+  end
+
+  def test_aggregated_linear_trend
+    # TODO
+  end
+
+  def test_approximate_entropy
+    expected = [0.2703100720721096]
+    assert_elements_in_delta expected, Khiva::Features.approximate_entropy(tss, 3, 1)
+  end
+
+  def test_auto_correlation
+    expected = [1.0, 0.4, -0.1]
+    assert_elements_in_delta expected, Khiva::Features.auto_correlation(tss, 3, false)
+  end
+
   def test_auto_covariance
     expected = [2.0, 0.8, -0.2, -0.8, -0.8]
     assert_elements_in_delta expected, Khiva::Features.auto_covariance(tss)

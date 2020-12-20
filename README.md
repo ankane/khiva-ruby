@@ -273,6 +273,24 @@ Absolute sum of changes
 Khiva::Features.absolute_sum_of_changes(tss)
 ```
 
+Aggregated autocorrelation
+
+```ruby
+Khiva::Features.aggregated_autocorrelation(tss, aggregation_function)
+```
+
+Approximate entropy
+
+```ruby
+Khiva::Features.approximate_entropy(tss, m, r)
+```
+
+Autocorrelation
+
+```ruby
+Khiva::Features.auto_correlation(tss, max_lag, unbiased)
+```
+
 Auto-covariance
 
 ```ruby

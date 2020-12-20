@@ -14,7 +14,21 @@ print('absolute_sum_of_changes')
 print(absolute_sum_of_changes(a).to_list())
 print()
 
-# ---
+print('aggregated_autocorrelation')
+print(aggregated_autocorrelation(a, 0).to_list())
+print()
+
+print('aggregated_linear_trend')
+print(aggregated_linear_trend(a, 2, 0))
+print()
+
+print('approximate_entropy')
+print(approximate_entropy(a, 3, 1).to_list())
+print()
+
+print('auto_correlation')
+print(auto_correlation(a, 3, False).to_list())
+print()
 
 print('auto_covariance')
 print(auto_covariance(a).to_list())
