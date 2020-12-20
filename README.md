@@ -42,6 +42,23 @@ Find motifs
 distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, 3, 2)
 ```
 
+## Examples
+
+### Anomaly Detection
+
+```ruby
+# generate a random time series with anomalies from position 100-109
+values = 1000.times.map { |i| i >= 100 && i <= 109 ? 0.5 : rand }
+
+# calculate the matrix profile with subsequence length 10
+a = Khiva::Array.new(values, type: :f32)
+profile, index = Khiva::Matrix.stomp_self_join(a, 10)
+
+# find and print the position of the most anomalous subsequence
+_, _, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, m, 1)
+p subsequences.to_a
+```
+
 ## Modules
 
 - [Array](#array)
