@@ -1,5 +1,6 @@
 ## 0.1.2 (unreleased)
 
+- Added `mass` method
 - Added more dimensionality methods
 - Added more feature methods
 

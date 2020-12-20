@@ -17,6 +17,12 @@ module Khiva
         [Array.new(motif_distances), Array.new(motif_indices), Array.new(subsequence_indices)]
       end
 
+      def mass(q, t)
+        distances = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:mass, q, t, distances)
+        Array.new(distances)
+      end
+
       def stomp(tssa, tssb, m)
         profile = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
         index = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)

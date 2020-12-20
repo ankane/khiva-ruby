@@ -17,6 +17,11 @@ class MatrixTest < Minitest::Test
     assert_equal [1, 3], subsequence_indices.to_a
   end
 
+  def test_mass
+    distances = Khiva::Matrix.mass(a1, a2)
+    assert_elements_in_delta [3.750405788421631], distances
+  end
+
   def test_stomp
     profile, index = Khiva::Matrix.stomp(a1, a2, 3)
     expected = [3.2495038509368896, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.2495038509368896]
