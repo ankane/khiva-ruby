@@ -22,24 +22,27 @@ gem 'khiva'
 
 ## Getting Started
 
-Calculate a matrix profile
+Calculate the [matrix profile](https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html) between two time series
 
 ```ruby
 a = Khiva::Array.new([11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11])
 b = Khiva::Array.new([9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9])
-profile, index = Khiva::Matrix.stomp(a, b, 3)
+m = 3 # subsequence length
+profile, index = Khiva::Matrix.stomp(a, b, m)
 ```
 
-Find discords
+Find discords (anomalies)
 
 ```ruby
-distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, 3, 2)
+n = 2 # number of discords to extract
+distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, m, n)
 ```
 
-Find motifs
+Find motifs (repeated patterns)
 
 ```ruby
-distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, 3, 2)
+n = 2 # number of motifs to extract
+distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, m, n)
 ```
 
 ## Examples
