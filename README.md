@@ -98,14 +98,14 @@ plt.legend
 Find a similar pattern in time series
 
 ```ruby
-series = [1, 1, 1, 3, 5, 1, 1]
+series = [1, 1, 1, 3, 5, 1, 1, 1, 1]
 query = [1, 2, 3]
 
 s = Khiva::Array.new(series, type: :f32)
 q = Khiva::Array.new(query, type: :f32)
 _, indices = Khiva::Matrix.find_best_n_occurrences(q, s, 1)
 pos = indices.to_a.first
-similar_subsequence = series[pos, query.length] # [1, 3, 5]
+similar_subsequence = series[pos, query.size] # [1, 3, 5]
 ```
 
 ## Modules
