@@ -55,7 +55,7 @@ a = Khiva::Array.new(series, type: :f32)
 m = 10
 profile, index = Khiva::Matrix.stomp_self_join(a, m)
 
-# find and print the starting position of the most anomalous subsequence
+# find and print the position of the most anomalous subsequence
 _, _, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, m, 1)
 pos = subsequences.to_a.first
 p pos
