@@ -327,6 +327,24 @@ Number of values below the mean
 Khiva::Features.count_below_mean(tss)
 ```
 
+Cross-correlation
+
+```ruby
+Khiva::Features.cross_correlation(xss, yss, unbiased)
+```
+
+Cross-covariance
+
+```ruby
+Khiva::Features.cross_covariance(xss, yss, unbiased)
+```
+
+Energy ratio by chunks
+
+```ruby
+Khiva::Features.energy_ratio_by_chunks(arr, num_segments, segment_focus)
+```
+
 The spectral centroid (mean), variance, skew, and kurtosis of the absolute fourier transform spectrum
 
 ```ruby

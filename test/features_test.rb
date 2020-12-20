@@ -60,9 +60,32 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.count_below_mean(tss)
   end
 
+  def test_cross_correlation
+    expected = [0.9999999999999998, 0.4999999999999999, -0.16666666666666663, -0.9999999999999998, -1.9999999999999996]
+    assert_elements_in_delta expected, Khiva::Features.cross_correlation(tss, tss, true)
+  end
+
+  def test_cross_covariance
+    expected = [2.0, 1.0, -0.3333333333333333, -2.0, -4.0]
+    assert_elements_in_delta expected, Khiva::Features.cross_covariance(tss, tss, true)
+  end
+
+  def test_cwt_coefficients
+    # TODO
+  end
+
+  def test_energy_ratio_by_chunks
+    expected = [0.45454545454545453]
+    assert_elements_in_delta expected, Khiva::Features.energy_ratio_by_chunks(tss, 2, 1)
+  end
+
   def test_fft_aggregated
     expected = [0.434631407211718, 0.485985279952239, Float::NAN, Float::NAN]
     assert_elements_in_delta expected, Khiva::Features.fft_aggregated(tss)
+  end
+
+  def test_fft_coefficient
+    # TODO
   end
 
   def test_first_location_of_maximum

@@ -69,11 +69,33 @@ module Khiva
         Array.new(result)
       end
 
+      def cross_correlation(xss, yss, unbiased)
+        result = Utils.create_ptr
+        FFI.call(:cross_correlation, xss, yss, Utils.bool_ptr(unbiased), result)
+        Array.new(result)
+      end
+
+      def cross_covariance(xss, yss, unbiased)
+        result = Utils.create_ptr
+        FFI.call(:cross_covariance, xss, yss, Utils.bool_ptr(unbiased), result)
+        Array.new(result)
+      end
+
+      # TODO cwt_coefficients
+
+      def energy_ratio_by_chunks(arr, num_segments, segment_focus)
+        result = Utils.create_ptr
+        FFI.call(:energy_ratio_by_chunks, arr, Utils.long_ptr(num_segments), Utils.long_ptr(segment_focus), result)
+        Array.new(result)
+      end
+
       def fft_aggregated(arr)
         result = Utils.create_ptr
         FFI.call(:fft_aggregated, arr, result)
         Array.new(result)
       end
+
+      # TODO fft_coefficient
 
       def first_location_of_maximum(arr)
         result = Utils.create_ptr

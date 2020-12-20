@@ -46,8 +46,6 @@ print('cid_ce')
 print(cid_ce(a, True).to_list())
 print()
 
-# ---
-
 print('count_above_mean')
 print(count_above_mean(a).to_list())
 print()
@@ -56,13 +54,30 @@ print('count_below_mean')
 print(count_below_mean(a).to_list())
 print()
 
-# ---
+print('cross_correlation')
+print(cross_correlation(a, a, True).to_list())
+print()
+
+print('cross_covariance')
+print(cross_covariance(a, a, True).to_list())
+print()
+
+print('cwt_coefficients')
+# TODO
+# print(cwt_coefficients(a, [1], 1, 2).to_list())
+print()
+
+print('energy_ratio_by_chunks')
+print(energy_ratio_by_chunks(a, 2, 1).to_list())
+print()
 
 print('fft_aggregated')
 print(fft_aggregated(a).to_list())
 print()
 
-# ---
+print('fft_coefficient')
+print(fft_coefficient(a, 1))
+print()
 
 print('first_location_of_maximum')
 print(first_location_of_maximum(a).to_list())
