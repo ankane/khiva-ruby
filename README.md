@@ -48,10 +48,10 @@ distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, ind
 
 ```ruby
 # generate a random time series with anomalies from position 100-109
-values = 1000.times.map { |i| i >= 100 && i <= 109 ? 0.5 : rand }
+series = 1000.times.map { |i| i >= 100 && i <= 109 ? 0.5 : rand }
 
 # calculate the matrix profile with subsequence length 10
-a = Khiva::Array.new(values, type: :f32)
+a = Khiva::Array.new(series, type: :f32)
 m = 10
 profile, index = Khiva::Matrix.stomp_self_join(a, m)
 
@@ -67,10 +67,10 @@ Use [matplotlib.rb](https://github.com/mrkn/matplotlib.rb) for visualization
 require "matplotlib/pyplot"
 plt = Matplotlib::Pyplot
 
-# values
+# series
 plt.figure(0)
-plt.title("Values")
-plt.plot(values)
+plt.title("Series")
+plt.plot(series)
 
 # matrix profile
 plt.figure(1)
