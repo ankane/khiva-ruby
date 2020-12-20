@@ -31,18 +31,18 @@ m = 3 # subsequence length
 profile, index = Khiva::Matrix.stomp(a, b, m)
 ```
 
-Find discords (anomalies)
-
-```ruby
-n = 2 # number of discords to extract
-distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, m, n)
-```
-
 Find motifs (repeated patterns)
 
 ```ruby
 n = 2 # number of motifs to extract
 distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, m, n)
+```
+
+Find discords (anomalies)
+
+```ruby
+n = 2 # number of discords to extract
+distances, indices, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, m, n)
 ```
 
 ## Examples
