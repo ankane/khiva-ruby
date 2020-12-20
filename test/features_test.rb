@@ -98,6 +98,10 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.first_location_of_minimum(tss)
   end
 
+  def test_friedrich_coefficients
+    # TODO
+  end
+
   def test_has_duplicate_max
     expected = [false]
     assert_equal expected, Khiva::Features.has_duplicate_max(tss).to_a
@@ -162,6 +166,10 @@ class FeaturesTest < Minitest::Test
     assert_elements_in_delta expected, Khiva::Features.longest_strike_below_mean(tss)
   end
 
+  def test_max_langevin_fixed_point
+    # TODO
+  end
+
   def test_maximum
     expected = [5]
     assert_elements_in_delta expected, Khiva::Features.maximum(tss)
@@ -195,6 +203,36 @@ class FeaturesTest < Minitest::Test
   def test_minimum
     expected = [1]
     assert_elements_in_delta expected, Khiva::Features.minimum(tss)
+  end
+
+  def test_number_crossing_m
+    expected = [1.0]
+    assert_elements_in_delta expected, Khiva::Features.number_crossing_m(tss, 3)
+  end
+
+  def test_number_cwt_peaks
+    # TODO
+  end
+
+  def test_number_peaks
+    expected = [0]
+    assert_elements_in_delta expected, Khiva::Features.number_peaks(tss, 2)
+  end
+
+  def test_partial_autocorrelation
+    lags = Khiva::Array.new([1], type: :s32)
+    expected = [1.0, 0.5]
+    assert_elements_in_delta expected, Khiva::Features.partial_autocorrelation(tss, lags)
+  end
+
+  def test_percentage_of_reoccurring_datapoints_to_all_datapoints
+    expected = [0]
+    assert_elements_in_delta expected, Khiva::Features.percentage_of_reoccurring_datapoints_to_all_datapoints(tss, false)
+  end
+
+  def test_percentage_of_reoccurring_values_to_all_values
+    expected = [0]
+    assert_elements_in_delta expected, Khiva::Features.percentage_of_reoccurring_values_to_all_values(tss, false)
   end
 
   def test_quantile

@@ -223,6 +223,38 @@ module Khiva
         Array.new(result)
       end
 
+      def number_crossing_m(arr, m)
+        result = Utils.create_ptr
+        FFI.call(:number_crossing_m, arr, Utils.int_ptr(m), result)
+        Array.new(result)
+      end
+
+      # TODO number_cwt_peaks
+
+      def number_peaks(arr, n)
+        result = Utils.create_ptr
+        FFI.call(:number_peaks, arr, Utils.int_ptr(n), result)
+        Array.new(result)
+      end
+
+      def partial_autocorrelation(arr, lags)
+        result = Utils.create_ptr
+        FFI.call(:partial_autocorrelation, arr, lags, result)
+        Array.new(result)
+      end
+
+      def percentage_of_reoccurring_datapoints_to_all_datapoints(arr, sorted)
+        result = Utils.create_ptr
+        FFI.call(:percentage_of_reoccurring_datapoints_to_all_datapoints, arr, Utils.bool_ptr(sorted), result)
+        Array.new(result)
+      end
+
+      def percentage_of_reoccurring_values_to_all_values(arr, sorted)
+        result = Utils.create_ptr
+        FFI.call(:percentage_of_reoccurring_values_to_all_values, arr, Utils.bool_ptr(sorted), result)
+        Array.new(result)
+      end
+
       def quantile(arr, q, precision: 100000000)
         result = Utils.create_ptr
         FFI.call(:quantile, arr, q, Utils.float_ptr(precision), result)

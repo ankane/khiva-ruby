@@ -477,6 +477,36 @@ Minimum
 Khiva::Features.minimum(tss)
 ```
 
+Number of m-crossings
+
+```ruby
+Khiva::Features.number_crossing_m(tss, m)
+```
+
+Number of peaks of at least support `n`
+
+```ruby
+Khiva::Features.number_peaks(tss, n)
+```
+
+Partial autocorrelation
+
+```ruby
+Khiva::Features.partial_autocorrelation(tss, lags)
+```
+
+Percentage of unique values present more than once
+
+```ruby
+Khiva::Features.percentage_of_reoccurring_datapoints_to_all_datapoints(tss, sorted)
+```
+
+Percentage of values present more than once
+
+```ruby
+Khiva::Features.percentage_of_reoccurring_values_to_all_values(tss, sorted)
+```
+
 Quantile
 
 ```ruby

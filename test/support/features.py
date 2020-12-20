@@ -87,7 +87,9 @@ print('first_location_of_minimum')
 print(first_location_of_minimum(a).to_list())
 print()
 
-# ---
+print('friedrich_coefficients')
+print(friedrich_coefficients(a, 1, 2).to_list())
+print()
 
 print('has_duplicate_max')
 print(has_duplicate_max(a).to_list())
@@ -141,7 +143,9 @@ print('longest_strike_below_mean')
 print(longest_strike_below_mean(a).to_list())
 print()
 
-# ---
+print('max_langevin_fixed_point')
+print(max_langevin_fixed_point(a, 1, 2).to_list())
+print()
 
 print('maximum')
 print(maximum(a).to_list())
@@ -171,7 +175,30 @@ print('minimum')
 print(minimum(a).to_list())
 print()
 
-# ---
+print('number_crossing_m')
+print(number_crossing_m(a, 3).to_list())
+print()
+
+print('number_cwt_peaks')
+# print(number_cwt_peaks(a, 3).to_list())
+print()
+
+print('number_peaks')
+print(number_peaks(a, 2).to_list())
+print()
+
+print('partial_autocorrelation')
+lags = Array.from_list([1], dtype.s32)
+print(partial_autocorrelation(a, lags).to_list())
+print()
+
+print('percentage_of_reoccurring_datapoints_to_all_datapoints')
+print(percentage_of_reoccurring_datapoints_to_all_datapoints(a, False).to_list())
+print()
+
+print('percentage_of_reoccurring_values_to_all_values')
+print(percentage_of_reoccurring_values_to_all_values(a, False).to_list())
+print()
 
 print('quantile')
 q = Array.from_list([0.5], dtype.f64)
