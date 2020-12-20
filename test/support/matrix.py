@@ -57,3 +57,7 @@ res = matrix_profile_self_join(a1, 3)
 print(res[0].to_list())
 print(res[1].to_list())
 print()
+
+print('chains')
+print(get_chains(a1, 4).to_list())
+print()

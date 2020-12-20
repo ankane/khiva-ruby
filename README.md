@@ -714,6 +714,12 @@ Calculate the matrix profile between `t` and itself using a subsequence length o
 profile, index = Khiva::Matrix.matrix_profile_self_join(t, m)
 ```
 
+Get chains
+
+```ruby
+Khiva::Matrix.chains(tss, m)
+```
+
 ## Normalization
 
 Decimal scaling

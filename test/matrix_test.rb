@@ -60,6 +60,11 @@ class MatrixTest < Minitest::Test
     assert_elements_in_delta [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], index
   end
 
+  def test_chains
+    expected = [[0, 8, 0, 0, 0, 0, 0, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0]]
+    assert_elements_in_delta expected, Khiva::Matrix.chains(a1, 4)
+  end
+
   def a1
     Khiva::Array.new([11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11])
   end

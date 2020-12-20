@@ -57,6 +57,12 @@ module Khiva
         FFI.call(:matrix_profile_self_join, tss, m, profile, index)
         [Array.new(profile), Array.new(index)]
       end
+
+      def chains(tss, m)
+        chains = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:get_chains, tss, m, chains)
+        Array.new(chains)
+      end
     end
   end
 end
