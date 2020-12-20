@@ -1,4 +1,4 @@
-## 0.1.2 (unreleased)
+## 0.1.2 (2020-12-19)
 
 - Added `find_best_n_occurrences` and `mass` methods
 - Added more dimensionality methods
