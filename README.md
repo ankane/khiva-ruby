@@ -44,7 +44,12 @@ distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, ind
 
 ## Examples
 
+- [Anomaly Detection](#anomaly-detection)
+- [Similarity Search](#similarity-search)
+
 ### Anomaly Detection
+
+Detect anomalies in a time series
 
 ```ruby
 # generate a random time series with anomalies from position 100-109
@@ -83,6 +88,17 @@ plt.title("Subsequences")
 plt.plot(series[pos, m], label: "Anomalous")
 plt.plot(series[index.to_a[pos], m], label: "Closest")
 plt.legend
+```
+
+### Similarity Search
+
+Find a similar pattern in time series
+
+```ruby
+series = Khiva::Array.new([1, 2, 3, 4, 3, 4, 5, 6], type: :f32)
+query = Khiva::Array.new([1, 2, 1], type: :f32)
+distances = Khiva::Matrix.mass(query, series)
+closest_index = distances.to_a.each_with_index.min[1]
 ```
 
 ## Modules
