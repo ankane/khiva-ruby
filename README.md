@@ -80,8 +80,8 @@ plt.plot(profile.to_a)
 # most anomalous subsequence and its closest subsequence
 plt.figure(2)
 plt.title("Subsequences")
-plt.plot(values[pos, m], label: "Anomalous")
-plt.plot(values[pos + index.to_a[pos], m], label: "Closest")
+plt.plot(series[pos, m], label: "Anomalous")
+plt.plot(series[index.to_a[pos], m], label: "Closest")
 plt.legend
 ```
 
