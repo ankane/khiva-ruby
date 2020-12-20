@@ -25,8 +25,8 @@ gem 'khiva'
 Calculate the [matrix profile](https://stumpy.readthedocs.io/en/latest/Tutorial_The_Matrix_Profile.html) between two time series
 
 ```ruby
-a = Khiva::Array.new([11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11])
-b = Khiva::Array.new([9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9])
+a = Khiva::Array.new([11, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11], type: :f32)
+b = Khiva::Array.new([9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9], type: :f32)
 m = 3 # subsequence length
 profile, index = Khiva::Matrix.stomp(a, b, m)
 ```
