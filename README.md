@@ -57,7 +57,28 @@ profile, index = Khiva::Matrix.stomp_self_join(a, m)
 
 # find and print the position of the most anomalous subsequence
 _, _, subsequences = Khiva::Matrix.find_best_n_discords(profile, index, m, 1)
-p subsequences.to_a
+pos = subsequences.to_a.first
+p pos
+```
+
+Use [matplotlib.rb](https://github.com/mrkn/matplotlib.rb) for visualization
+
+```ruby
+require "matplotlib/pyplot"
+plt = Matplotlib::Pyplot
+
+# values
+plt.plot(values)
+plt.show
+
+# matrix profile
+plt.plot(profile.to_a)
+plt.show
+
+# most anomalous subsequence and its closest subsequence
+plt.plot(values[pos, m])
+plt.plot(values[pos + index.to_a[pos], m])
+plt.show
 ```
 
 ## Modules
