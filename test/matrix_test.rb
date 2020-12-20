@@ -17,6 +17,12 @@ class MatrixTest < Minitest::Test
     assert_equal [1, 3], subsequence_indices.to_a
   end
 
+  def test_find_best_n_occurrences
+    distances, indices = Khiva::Matrix.find_best_n_occurrences(a1, a2, 1)
+    assert_elements_in_delta [3.750405788421631], distances
+    assert_equal [0], indices.to_a
+  end
+
   def test_mass
     distances = Khiva::Matrix.mass(a1, a2)
     assert_elements_in_delta [3.750405788421631], distances

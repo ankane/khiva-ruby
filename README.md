@@ -679,6 +679,12 @@ Find motifs
 distances, indices, subsequences = Khiva::Matrix.find_best_n_motifs(profile, index, m, n)
 ```
 
+Find best occurences
+
+```ruby
+distances, indices = Khiva::Matrix.find_best_n_occurrences(q, t, n)
+```
+
 Mueen’s Algorithm for Similarity Search (MASS)
 
 ```ruby

@@ -24,6 +24,12 @@ print(find_best_n_motifs_result[1].to_list())
 print(find_best_n_motifs_result[2].to_list())
 print()
 
+print('find_best_n_occurrences')
+res = find_best_n_occurrences(a1, a2, 1)
+print(res[0].to_list())
+print(res[1].to_list())
+print()
+
 print('mass')
 print(mass(a1, a2).to_list())
 print()

@@ -17,6 +17,13 @@ module Khiva
         [Array.new(motif_distances), Array.new(motif_indices), Array.new(subsequence_indices)]
       end
 
+      def find_best_n_occurrences(q, t, n)
+        distances = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        indices = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:find_best_n_occurrences, q, t, n, distances, indices)
+        [Array.new(distances), Array.new(indices)]
+      end
+
       def mass(q, t)
         distances = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
         FFI.call(:mass, q, t, distances)
