@@ -68,17 +68,21 @@ require "matplotlib/pyplot"
 plt = Matplotlib::Pyplot
 
 # values
+plt.figure(0)
+plt.title("Values")
 plt.plot(values)
-plt.show
 
 # matrix profile
+plt.figure(1)
+plt.title("Matrix Profile")
 plt.plot(profile.to_a)
-plt.show
 
 # most anomalous subsequence and its closest subsequence
-plt.plot(values[pos, m])
-plt.plot(values[pos + index.to_a[pos], m])
-plt.show
+plt.figure(2)
+plt.title("Subsequences")
+plt.plot(values[pos, m], label: "Anomalous")
+plt.plot(values[pos + index.to_a[pos], m], label: "Closest")
+plt.legend
 ```
 
 ## Modules
