@@ -840,9 +840,9 @@ sudo apt-get install libboost-all-dev libeigen3-dev
 Install ArrayFire:
 
 ```sh
-wget -q https://arrayfire.s3.amazonaws.com/3.7.3/ArrayFire-v3.7.3_Linux_x86_64.sh
-chmod +x ./ArrayFire-v3.7.3_Linux_x86_64.sh
-./ArrayFire-v3.7.3_Linux_x86_64.sh --include-subdir --prefix=/opt
+wget -q https://arrayfire.s3.amazonaws.com/3.8.0/ArrayFire-v3.8.0_Linux_x86_64.sh
+chmod +x ./ArrayFire-v3.8.0_Linux_x86_64.sh
+./ArrayFire-v3.8.0_Linux_x86_64.sh --include-subdir --prefix=/opt
 echo /opt/arrayfire/lib64 | sudo tee /etc/ld.so.conf.d/arrayfire.conf
 sudo ldconfig
 ```
