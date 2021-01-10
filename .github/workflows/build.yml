@@ -6,7 +6,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-latest]
+        os: [macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
@@ -37,5 +37,5 @@ jobs:
         sudo ldconfig
     - if: ${{ startsWith(matrix.os, 'macos') }}
       name: Install Khiva on Mac
-      run: brew install khiva
+      run: brew update && brew install khiva --force
     - run: bundle exec rake test
