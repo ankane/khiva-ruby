@@ -829,35 +829,28 @@ Khiva::Statistics.skewness(tss)
 
 ## Khiva Installation
 
-### Linux
-
-Install Boost and Eigen. On Ubuntu, use:
-
-```sh
-sudo apt-get install libboost-all-dev libeigen3-dev
-```
+### Linux - Ubuntu
 
 Install ArrayFire:
 
 ```sh
-wget -q https://arrayfire.s3.amazonaws.com/3.8.0/ArrayFire-v3.8.0_Linux_x86_64.sh
-chmod +x ./ArrayFire-v3.8.0_Linux_x86_64.sh
-./ArrayFire-v3.8.0_Linux_x86_64.sh --include-subdir --prefix=/opt
-echo /opt/arrayfire/lib64 | sudo tee /etc/ld.so.conf.d/arrayfire.conf
-sudo ldconfig
+sudo apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
+echo "deb [arch=amd64] https://repo.arrayfire.com/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) main" | sudo tee /etc/apt/sources.list.d/arrayfire.list
+sudo apt-get update
+sudo apt-get install arrayfire-unified3 arrayfire-cpu3-openblas arrayfire-opencl3-openblas
 ```
 
 And install Khiva:
 
 ```sh
-git clone --recursive --branch v0.5.0 https://github.com/shapelets/khiva
-cd khiva
-mkdir build
-cd build
-cmake .. -DKHIVA_USE_CONAN=OFF -DKHIVA_BUILD_TESTS=OFF -DKHIVA_BUILD_BENCHMARKS=OFF -DKHIVA_BUILD_JNI_BINDINGS=OFF
-make -j4
-sudo make install
+wget https://github.com/shapelets/khiva/releases/download/v0.5.0/khiva-khiva_0.5.0_amd64.deb
+sudo dpkg -i khiva-khiva_0.5.0_amd64.deb
+sudo ldconfig
 ```
+
+### Linux - Other
+
+See [instructions](https://khiva.readthedocs.io/en/latest/gettingStarted.html).
 
 ### Mac
 
@@ -869,7 +862,7 @@ brew install khiva
 
 ### Windows
 
-See [instructions](https://khiva.readthedocs.io/en/latest/gettingStarted.html#windows).
+See [instructions](https://khiva.readthedocs.io/en/latest/gettingStarted.html).
 
 ## Credits
 
