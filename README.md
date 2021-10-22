@@ -1,4 +1,4 @@
-# Khiva
+# Khiva Ruby
 
 [Khiva](https://github.com/shapelets/khiva) - high-performance time series algorithms - for Ruby
 
