@@ -26,9 +26,5 @@ jobs:
         sudo ldconfig
     - if: ${{ startsWith(matrix.os, 'macos') }}
       name: Install Khiva on Mac
-      run: |
-        brew update
-        brew unlink gcc@8
-        brew unlink gcc@9
-        brew install khiva
+      run: brew install khiva
     - run: bundle exec rake test
