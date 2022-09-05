@@ -17,7 +17,7 @@ brew install khiva
 Add this line to your application’s Gemfile:
 
 ```ruby
-gem 'khiva'
+gem "khiva"
 ```
 
 ## Getting Started
