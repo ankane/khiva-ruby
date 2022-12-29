@@ -8,23 +8,23 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
-    - uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 3.1
-        bundler-cache: true
-    - if: ${{ startsWith(matrix.os, 'ubuntu') }}
-      name: Install Khiva on Linux
-      run: |
-        sudo apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
-        echo "deb [arch=amd64] https://repo.arrayfire.com/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) main" | sudo tee /etc/apt/sources.list.d/arrayfire.list
-        sudo apt-get update
-        sudo apt-get install arrayfire-unified3 arrayfire-cpu3-openblas arrayfire-opencl3-openblas
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+          bundler-cache: true
+      - if: ${{ startsWith(matrix.os, 'ubuntu') }}
+        name: Install Khiva on Linux
+        run: |
+          sudo apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
+          echo "deb [arch=amd64] https://repo.arrayfire.com/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) main" | sudo tee /etc/apt/sources.list.d/arrayfire.list
+          sudo apt-get update
+          sudo apt-get install arrayfire-unified3 arrayfire-cpu3-openblas arrayfire-opencl3-openblas
 
-        wget -q https://github.com/shapelets/khiva/releases/download/v0.5.0/khiva-khiva_0.5.0_amd64.deb
-        sudo dpkg -i khiva-khiva_0.5.0_amd64.deb
-        sudo ldconfig
-    - if: ${{ startsWith(matrix.os, 'macos') }}
-      name: Install Khiva on Mac
-      run: brew install khiva
-    - run: bundle exec rake test
+          wget -q https://github.com/shapelets/khiva/releases/download/v0.5.0/khiva-khiva_0.5.0_amd64.deb
+          sudo dpkg -i khiva-khiva_0.5.0_amd64.deb
+          sudo ldconfig
+      - if: ${{ startsWith(matrix.os, 'macos') }}
+        name: Install Khiva on Mac
+        run: brew install khiva
+      - run: bundle exec rake test
