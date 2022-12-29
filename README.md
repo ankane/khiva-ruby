@@ -835,7 +835,7 @@ Install ArrayFire:
 
 ```sh
 sudo apt-key adv --fetch-key https://repo.arrayfire.com/GPG-PUB-KEY-ARRAYFIRE-2020.PUB
-echo "deb [arch=amd64] https://repo.arrayfire.com/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) main" | sudo tee /etc/apt/sources.list.d/arrayfire.list
+echo "deb [arch=amd64] https://repo.arrayfire.com/debian all main" | sudo tee /etc/apt/sources.list.d/arrayfire.list
 sudo apt-get update
 sudo apt-get install arrayfire-unified3 arrayfire-cpu3-openblas arrayfire-opencl3-openblas
 ```
