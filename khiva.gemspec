@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name          = "khiva"
   spec.version       = Khiva::VERSION
   spec.summary       = "High-performance time series algorithms for Ruby"
-  spec.homepage      = "https://github.com/ankane/khiva"
+  spec.homepage      = "https://github.com/ankane/khiva-ruby"
   spec.license       = "MPL-2.0"
 
   spec.author        = "Andrew Kane"
