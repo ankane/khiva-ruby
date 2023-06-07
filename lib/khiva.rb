@@ -28,7 +28,11 @@ module Khiva
     if Gem.win_platform?
       ["khiva_c.dll"]
     elsif RbConfig::CONFIG["host_os"] =~ /darwin/i
-      ["libkhiva_c.dylib"]
+      if RbConfig::CONFIG["host_cpu"] =~ /arm|aarch64/i
+        ["libkhiva_c.dylib", "/opt/homebrew/lib/libkhiva_c.dylib"]
+      else
+        ["libkhiva_c.dylib"]
+      end
     else
       ["libkhiva_c.so"]
     end
