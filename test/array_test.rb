@@ -16,6 +16,10 @@ class ArrayTest < Minitest::Test
     a = Khiva::Array.new([1, 2, 3])
     b = a.copy
     assert_equal [1, 2, 3], b.to_a
+    c = a.dup
+    assert_equal [1, 2, 3], c.to_a
+    d = a.clone
+    assert_equal [1, 2, 3], d.to_a
   end
 
   def test_operations

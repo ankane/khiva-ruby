@@ -44,13 +44,10 @@ module Khiva
         data = Fiddle::Pointer[flat_obj.pack("#{TYPE_FORMAT[type]}*")]
         ndims = dims.size
         dims = Fiddle::Pointer[dims.pack("q!*")]
-        result = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
-
-        FFI.call(:create_array, data, ndims, dims, result, TYPES.index(type))
-        @ptr = result
+        @ptr = Fiddle::Pointer.malloc(Fiddle::SIZEOF_VOIDP)
+        FFI.call(:create_array, data, ndims, dims, @ptr, TYPES.index(type))
+        ObjectSpace.define_finalizer(@ptr, self.class.finalize(@ptr.to_i))
       end
-
-      ObjectSpace.define_finalizer(self, self.class.finalize(@ptr))
     end
 
     def display
@@ -131,9 +128,9 @@ module Khiva
     alias_method :dup, :copy
     alias_method :clone, :copy
 
-    def self.finalize(ptr)
+    def self.finalize(addr)
       # must use proc instead of stabby lambda
-      proc { FFI.call(:delete_array, ptr) }
+      proc { FFI.call(:delete_array, addr) }
     end
   end
 end
