@@ -1,4 +1,4 @@
-## 0.2.1 (unreleased)
+## 0.2.1 (2023-06-07)
 
 - Improved support for Mac ARM
 
