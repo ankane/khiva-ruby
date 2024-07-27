@@ -4,7 +4,7 @@
 
 :fire: Runs on GPUs (even on Mac) and CPUs
 
-[![Build Status](https://github.com/ankane/khiva-ruby/workflows/build/badge.svg?branch=master)](https://github.com/ankane/khiva-ruby/actions)
+[![Build Status](https://github.com/ankane/khiva-ruby/actions/workflows/build.yml/badge.svg)](https://github.com/ankane/khiva-ruby/actions)
 
 ## Installation
 
